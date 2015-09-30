@@ -53,20 +53,12 @@ class Command
     tx = client.sendfrom @user_id, user_address(target_user), @amount
     @result[:text] = "#{@coin_config_module::TIP_PRETEXT} <@#{@user_id}> => <@#{target_user}> #{@amount}#{@coin_config_module::CURRENCY_ICON}"
     @result[:attachments] = [{
-      fallback:"<@#{@user_id}> => <@#{target_user}> #{@amount}Ð",
+      fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}JBS",
       color: "good",
       fields: [{
-        title: "such tipping #{@amount}Ð wow!",
-        value: "http://dogechain.info/tx/#{tx}",
+        title: "wooo a #{@amount}JBS tip!",
+        value: "http://explorer.getjumbucks.com/tx/#{tx}",
         short: false
-      },{
-        title: "generous shibe",
-        value: "<@#{@user_id}>",
-        short: true
-      },{
-        title: "lucky shibe",
-        value: "<@#{target_user}>",
-        short: true
       }]
     }] 
     

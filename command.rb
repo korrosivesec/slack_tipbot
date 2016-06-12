@@ -53,19 +53,27 @@ class Command
     tx = client.sendfrom @user_id, user_address(target_user), @amount
     @result[:text] = "#{@coin_config_module::TIP_PRETEXT} <@#{@user_id}> => <@#{target_user}> #{@amount}#{@coin_config_module::CURRENCY_ICON}"
     @result[:attachments] = [{
-      fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}JBS",
+      fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}:SKC:",
       color: "good",
       fields: [{
-        title: "wooo a #{@amount}JBS tip!",
-        value: "http://explorer.getjumbucks.com/tx/#{tx}",
+        title: ":skc: Transaction Details: ",
+        value: "http://seckchain.get-o.net/tx/#{tx}",
         short: false
+      },{
+        title: "From Hacker: ",
+        value: "<@#{@user_id}>",
+        short: true
+      },{
+        title: "To Hacker: ",
+        value: "<@#{target_user}>",
+        short: true
       }]
-    }] 
+    }]
     
     @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
   end
 
-  alias :":dogecoin:" :tip
+  alias :":tipskc:" :tip
 
   def withdraw
     address = @params.shift
@@ -115,7 +123,7 @@ class Command
 
   def commands
     
-    @result[:text] = "#{ACTIONS.join(', ' )}"
+    @result[:text] = "#{@coin_config_module::HELP_TEXT} #{ACTIONS.join(', ' )}"
   end
 
 end

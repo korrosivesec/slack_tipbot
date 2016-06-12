@@ -18,6 +18,7 @@ module Jumbucks
   TOO_POOR_TEXT = 'Sorry, you don\'t have enough JBS.'
   NO_PURPOSE_LOWER_BOUND_TEXT = 'Too small. No one wants your dust.'
   NO_PURPOSE_LOWER_BOUND = 1
+  HELP_TEXT = 'Commands I understand are: '
   RANDOMIZED_EMOJI = ':black_joker:'
   NETWORK = 'jumbucks'
 end

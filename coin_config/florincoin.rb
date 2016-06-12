@@ -19,5 +19,6 @@ module Florincoin
   NO_PURPOSE_LOWER_BOUND_TEXT = 'Too low of an amount of FLO'
   NO_PURPOSE_LOWER_BOUND = 1
   RANDOMIZED_EMOJI = ':black_joker:'
+  HELP_TEXT = 'Commands I understand are: '
   NETWORK = 'florincoin'
 end

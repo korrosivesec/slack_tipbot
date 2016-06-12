@@ -19,5 +19,6 @@ module Litecoin
   NO_PURPOSE_LOWER_BOUND_TEXT = 'Too small. No purpose'
   NO_PURPOSE_LOWER_BOUND = 0.00000001
   RANDOMIZED_EMOJI = ':black_joker:'
+  HELP_TEXT = 'Commands I understand are: '
   NETWORK = 'litecoin'
 end

@@ -16,7 +16,7 @@ module Seckcoin
   WITHDRAW_ICON = ':shit:'
   NETWORKINFO_ICON = ':bar_chart:'
   TOO_POOR_TEXT = 'Sory, your to pour'
-  NO_PURPOSE_LOWER_BOUND_TEXT = 'Too small, MAKE IT RAIN!'
+  NO_PURPOSE_LOWER_BOUND_TEXT = 'Too small, LET\'S MAKE IT RAIN!'
   NO_PURPOSE_LOWER_BOUND = 0.001
   HELP_TEXT = 'Commands I understand are: '
   RANDOMIZED_EMOJI = ':black_joker:'

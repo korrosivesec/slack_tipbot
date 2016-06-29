@@ -57,7 +57,7 @@ class Command
       color: "good",
       fields: [{
         title: ":skc: Transaction Details: ",
-        value: "http://seckchain.get-o.net/tx/#{tx}",
+        value: "<#{@coin_config_module::TIP_POSTTEXT1}#{tx}>",
         short: false
       },{
         title: "From Hacker: ",

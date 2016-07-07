@@ -47,7 +47,7 @@ class Command
     user = @params.shift
     target_user = $1
     userBalance = client.getbalance(@user_id)
-    targetBalance = client.getbalance(target_user)
+    targetBalance = client.getbalance(@target_user)
     raise @coin_config_module::TIP_ERROR_TEXT unless user =~ /<@(U.+)>/
     set_amount
 

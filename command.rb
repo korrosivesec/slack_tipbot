@@ -61,11 +61,11 @@ class Command
         short: false
       },{
         title: "From: ",
-        value: "<@#{@user_id}>{@coin_config_module::TIP_POSTTEXT3}>",
+        value: "(<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)",
         short: true
       },{
         title: "To: ",
-        value: " <@#{target_user}>{@coin_config_module::TIP_POSTTEXT3}>"
+        value: "(<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
         short: true
       }]
     }]

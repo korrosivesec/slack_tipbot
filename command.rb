@@ -57,7 +57,7 @@ class Command
       color: "good",
       fields: [{
         title: ":skc: Transaction Hash:",
-        value: "#{tx}"
+        value: "#{tx}",
         short: true
       },{
         title: "From: ",

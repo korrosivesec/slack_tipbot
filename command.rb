@@ -151,6 +151,7 @@ class Command
                 \nwithdraw: Usage 'tipskc withdraw SecKCoinAddress amount' -- This will transfer :SKC: from the bot wallet to whatever address you specify (ex a Desktop wallet)
                 \nnetworkinfo: Usage 'tipskc networkinfo' -- This will return information about the SecKCoin network
                 \nhelp: Usage 'tipskc help' -- this will return this text",
+              }
         short: false
     }]
   end

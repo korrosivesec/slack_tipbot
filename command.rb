@@ -45,9 +45,11 @@ class Command
 
   def tip
     user = @params.shift
-    target_user = $1
     userBalance = client.getbalance(@user_id)
+    #targetBalance = client.getbalance(target_user)
     raise @coin_config_module::TIP_ERROR_TEXT unless user =~ /<@(U.+)>/
+
+    target_user = $1
     set_amount
 
     tx = client.sendfrom @user_id, user_address(target_user), @amount
@@ -62,12 +64,12 @@ class Command
       },{
         title: "From: ",
         value: "<@#{@user_id}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)
-                \nBalance: #{userBalance}#{@coin_config_module::CURRENCY_ICON}",
+              \nBalance: #{userBalance}",
         short: true
       },{
         title: "To: ",
         value: "<@#{target_user}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)
-              \nBalance: XXXXXX",
+        \nBalance: XXXXXXXXX",
         short: true
       }]
     }]

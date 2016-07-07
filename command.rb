@@ -144,13 +144,29 @@ class Command
         short: false
       },{
         title: "Bot Commands:",
-        value: "balance:\n Usage 'tipskc balance' -- This will show your your current :skc: balance
-                \ndeposit:\n Usage 'tipskc deposit' -- This will return your :SKC: wallet address
-                \ntip:\n Usage 'tipskc tip @username amount' -- This will transfer the specified amount of :skc: to the other user. Also available 'tipskc tip @username random low high'
-                \nwithdraw:\n Usage 'tipskc withdraw SecKCoinAddress amount' -- This will transfer :SKC: from the bot wallet to whatever address you specify (ex a Desktop wallet)
-                \nnetworkinfo:\n Usage 'tipskc networkinfo' -- This will return information about the SecKCoin network
-                \nhelp:\n Usage 'tipskc help' -- this will return this text",
+      },{
+        title: "balance:",
+        value: "Usage 'tipskc balance' -- This will show your your current :skc: balance",
         short: false
+      },{
+        title: "deposit:",
+        value: "Usage 'tipskc deposit' -- This will return your :SKC: wallet address",
+        short: false        
+      },{
+        title: "tip:",
+        value: "Usage 'tipskc tip @username amount' -- This will transfer the specified amount of :skc: to the other user. Also available 'tipskc tip @username random low high'",
+        short: false 
+      },{
+        title: "withdraw:",
+        value: "Usage 'tipskc withdraw SecKCoinAddress amount' -- This will transfer :SKC: from the bot wallet to whatever address you specify (ex a Desktop wallet)",
+        short: false  
+      },{
+        title: "networkinfo:",
+        value: "Usage 'tipskc networkinfo' -- This will return information about the SecKCoin network",
+        short: false 
+      },{
+        title: "help:",
+        value: "Usage 'tipskc help' -- this will return this text",
       }]
     }]
   end

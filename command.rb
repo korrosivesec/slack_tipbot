@@ -56,7 +56,7 @@ class Command
       fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}:SKC:",
       color: "good",
       fields: [{
-        title: ":skc: Transaction Details: <#{tx}>",
+        title: ":skc: Transaction Details: #{tx}",
         value: "View on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>",
         short: false
       },{

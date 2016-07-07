@@ -9,7 +9,7 @@ module Seckcoin
   DEPOSIT_PRETEXT = 'Make a deposit'
   DEPOSIT_POSTTEXT = 'this is your address'
   TIP_ERROR_TEXT = 'pls say tip @username amount'
-  TIP_PRETEXT = ':tada:'
+  TIP_PRETEXT = ':money_with_wings:'
   TIP_POSTTEXT1 = 'https://seckco.in/tx/'
   ADDRESS_LOOKUP = 'https://seckco.in/address/'
   TIP_POSTTEXT3 = '|Address'

@@ -58,7 +58,7 @@ class Command
       fields: [{
         title: ":skc: Transaction Hash:",
         value: "#{tx}",
-        short: true
+        short: false
       },{
         title: "From: ",
         value: "<@#{@user_id}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)",

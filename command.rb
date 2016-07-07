@@ -62,11 +62,11 @@ class Command
       },{
         title: "From Hacker: ",
         value: "<@#{@user_id}>: #{user_address(@user_id)}",
-        short: true
+        short: false
       },{
         title: "To Hacker: ",
         value: "<@#{target_user}>: #{user_address(@user_id)}",
-        short: true
+        short: false
       }]
     }]
     
@@ -74,12 +74,6 @@ class Command
   end
 
   alias :":tipskc:" :tip
-
-  def chat
-    @result[:text] = "#{@coin_config_module::WITHDRAW_TEXT} <@#{@user_id}> => #{address} #{@amount}#{@coin_config_module::CURRENCY_ICON} "
-    @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
-    @result[:icon_emoji] = @coin_config_module::WITHDRAW_ICON
-  end
 
   def withdraw
     address = @params.shift

@@ -57,7 +57,7 @@ class Command
       color: "good",
       fields: [{
         title: ":skc: Transaction Details: ",
-        value: "Transaction: #{tx}>",
+        value: "Transaction: <#{tx}>",
         value: "View on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>",
         short: false
       },{

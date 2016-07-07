@@ -102,8 +102,7 @@ class Command
     #amount = @params.shift
     #randomize_amount if (amount == "random")
     #@amount = amount.to_i
-    amount = @params.shift
-    randomize_amount if (amount == "random")
+
   
     
     raise @coin_config_module::TOO_POOR_TEXT unless available_balance >= @amount + 1

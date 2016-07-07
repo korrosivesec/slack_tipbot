@@ -57,7 +57,6 @@ class Command
       color: "good",
       fields: [{
         title: ":skc: Transaction Details: #{tx}",
-        value: "(View on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)",
         short: false
       },{
         title: "From: ",
@@ -70,7 +69,7 @@ class Command
       }]
     }]
     #
-    @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
+    @result[:text] += " (View on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
   end
 
   alias :":tipskc:" :tip

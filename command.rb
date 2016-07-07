@@ -82,7 +82,7 @@ class Command
     set_amount
     tx = client.sendfrom @user_id, address, @amount
     @result[:text] = "#{@coin_config_module::WITHDRAW_TEXT} <@#{@user_id}> => #{address} #{@amount}#{@coin_config_module::CURRENCY_ICON} "
-    @result[:text] += " (View transaction on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
+    @result[:text] += " \n(View transaction on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
     @result[:icon_emoji] = @coin_config_module::WITHDRAW_ICON
   end
 

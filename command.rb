@@ -63,13 +63,11 @@ class Command
         short: false
       },{
         title: "From: ",
-        mrkdwn: true,
-        value: "<@#{@user_id}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}|#{user_address(@user_id)}>\n*Current Balance:* #{userBalance}",
+        value: "<@#{@user_id}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}|#{user_address(@user_id)}>\nCurrent Balance: #{userBalance}",
         short: true
       },{
         title: "To: ",
-        mrkdwn: true,
-        value: "<@#{target_user}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(target_user)}>\n*Current Balance:* #{targetBalance}",
+        value: "<@#{target_user}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(target_user)}>\nCurrent Balance: #{targetBalance}",
         short: true
       }]
     }]

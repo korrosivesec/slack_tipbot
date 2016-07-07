@@ -65,7 +65,7 @@ class Command
         short: true
       },{
         title: "To: ",
-        value: "<@#{target_user}>"
+        value: "<@#{target_user}>",
         short: true
       }]
     }]

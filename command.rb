@@ -47,7 +47,6 @@ class Command
     user = @params.shift
     target_user = $1
     userBalance = client.getbalance(@user_id)
-    targetBalance = client.getbalance($1)
     raise @coin_config_module::TIP_ERROR_TEXT unless user =~ /<@(U.+)>/
     set_amount
 
@@ -68,7 +67,7 @@ class Command
       },{
         title: "To: ",
         value: "<@#{target_user}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)
-              \nBalance: #{targetBalance}#{@coin_config_module::CURRENCY_ICON}",
+              \nBalance: XXXXXX",
         short: true
       }]
     }]

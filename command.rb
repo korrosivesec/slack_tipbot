@@ -152,7 +152,7 @@ class Command
                 \nnetworkinfo: Usage 'tipskc networkinfo' -- This will return information about the SecKCoin network
                 \nhelp: Usage 'tipskc help' -- this will return this text",
         short: false
-      }
+      }]
     }]
     #
     @result[:text] += " (View transaction on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"

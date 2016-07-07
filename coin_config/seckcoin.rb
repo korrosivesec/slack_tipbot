@@ -14,7 +14,7 @@ module Seckcoin
   ADDRESS_LOOKUP = 'https://seckco.in/address/'
   TIP_POSTTEXT2 = '|blockchain'
   TIP_POSTTEXT3 = '|Address'
-  WITHDRAW_TEXT = ':SKC: TRANSFER INITITIATED'
+  WITHDRAW_TEXT = 'TRANSFER INITITIATED'
   WITHDRAW_ICON = ':classical_building:'
   NETWORKINFO_ICON = ':bar_chart:'
   TOO_POOR_TEXT = 'Sory, your to pour'

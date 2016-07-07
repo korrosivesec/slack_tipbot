@@ -94,7 +94,7 @@ class Command
 
   def set_amount
     amount = @params.shift
-    randomize_amount if (@amount == "random")
+    randomize_amount if (amount == "random")
     @amount = amount.to_i
     
     raise @coin_config_module::TOO_POOR_TEXT unless available_balance >= @amount + 1

@@ -64,12 +64,12 @@ class Command
       },{
         title: "From: ",
         mrkdwn: true,
-        value: "<@#{@user_id}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}|#{user_address(@user_id)}>\nBalance: #{userBalance}",
+        value: "<@#{@user_id}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}|#{user_address(@user_id)}>\n*Balance:* #{userBalance}",
         short: true
       },{
         title: "To: ",
         mrkdwn: true,
-        value: "<@#{target_user}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(target_user)}>\nBalance: #{targetBalance}",
+        value: "<@#{target_user}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(target_user)}>\n*Balance:* #{targetBalance}",
         short: true
       }]
     }]

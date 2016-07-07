@@ -12,7 +12,6 @@ module Seckcoin
   TIP_PRETEXT = ':tada:'
   TIP_POSTTEXT1 = 'https://seckco.in/tx/'
   ADDRESS_LOOKUP = 'https://seckco.in/address/'
-  TIP_POSTTEXT2 = '|blockchain'
   TIP_POSTTEXT3 = '|Address'
   WITHDRAW_TEXT = 'Protecting your coin, good for you!'
   WITHDRAW_ICON = ':shit:'

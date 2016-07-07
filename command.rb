@@ -56,8 +56,9 @@ class Command
       fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}:SKC:",
       color: "good",
       fields: [{
-        title: ":skc: Transaction Details: #{tx}",
-        short: false
+        title: ":skc: Transaction Hash:",
+        value: "#{tx}"
+        short: true
       },{
         title: "From: ",
         value: "<@#{@user_id}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)",

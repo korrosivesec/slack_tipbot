@@ -61,11 +61,11 @@ class Command
         short: false
       },{
         title: "From: ",
-        value: "<@#{@user_id}>: (<#{@coin_config_module::TIP_POSTTEXT1}address/#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)",
+        value: "<@#{@user_id}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)",
         short: true
       },{
         title: "To: ",
-        value: "<@#{target_user}>: (<#{@coin_config_module::TIP_POSTTEXT1}address/#{user_address(@target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)",
+        value: "<@#{target_user}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)",
         short: true
       }]
     }]
@@ -80,7 +80,7 @@ class Command
     set_amount
     tx = client.sendfrom @user_id, address, @amount
     @result[:text] = "#{@coin_config_module::WITHDRAW_TEXT} <@#{@user_id}> => #{address} #{@amount}#{@coin_config_module::CURRENCY_ICON} "
-    @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}tx/#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
+    @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
     @result[:icon_emoji] = @coin_config_module::WITHDRAW_ICON
   end
 

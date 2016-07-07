@@ -61,7 +61,7 @@ class Command
         short: false
       },{
         title: "From: ",
-        value: "<@#{@user_id}>#{@coin_config_module::TIP_POSTTEXT3}>",
+        value: "<@#{@user_id}>: (<#{@coin_config_module::TIP_POSTTEXT1}#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)",
         short: true
       },{
         title: "To: ",
@@ -69,7 +69,7 @@ class Command
         short: true
       }]
     }]
-    
+    #
     @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
   end
 

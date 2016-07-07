@@ -62,12 +62,12 @@ class Command
       },{
         title: "From: ",
         value: "<@#{@user_id}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)",
-        text: "Balance: "
+        text: "Balance: ",
         short: true
       },{
         title: "To: ",
         value: "<@#{target_user}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)",
-        text: "Balance: "
+        text: "Balance: ",
         short: true
       }]
     }]

@@ -98,6 +98,8 @@ class Command
         lower = @params.shift.to_i
         upper = @params.shift.to_i
         @amount = rand(lower..upper).to_i
+    else 
+        @amount = amount.to_i
     end
     #amount = @params.shift
     #randomize_amount if (amount == "random")

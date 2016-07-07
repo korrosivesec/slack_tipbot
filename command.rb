@@ -70,7 +70,7 @@ class Command
       }]
     }]
     #
-    @result[:text] += " (View on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
+    @result[:text] += " (View transaction on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
   end
 
   alias :":tipskc:" :tip

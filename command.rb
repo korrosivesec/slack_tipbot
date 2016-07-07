@@ -69,7 +69,7 @@ class Command
       },{
         title: "To: ",
         mrkdwn: true,
-        value: "<@#{target_user}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(target_user)}>\nBalance: XXXXXXXXX",
+        value: "<@#{target_user}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(target_user)}>\nBalance: #{targetBalance}",
         short: true
       }]
     }]

@@ -137,7 +137,6 @@ class Command
     
     @result[:text] = "#{@coin_config_module::HELP_TEXT} #{ACTIONS.join(', ' )}"
     @result[:attachments] = [{
-      fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}:SKC:",
       color: "good",
       fields: [{
         title: ":skc: How-To get Started:",
@@ -154,8 +153,6 @@ class Command
         short: false
       }]
     }]
-    #
-    @result[:text] += " (View transaction on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
   end
 
 end

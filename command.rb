@@ -60,12 +60,12 @@ class Command
         value: "<#{@coin_config_module::TIP_POSTTEXT1}#{tx}>",
         short: false
       },{
-        title: "From: <@#{@user_id}>",
-        value: "#{user_address(@user_id)}",
+        title: "From: ",
+        value: "<@#{@user_id}>", "#{user_address(@user_id)}",
         short: true
       },{
-        title: "To: <@#{target_user}>",
-        value: "#{user_address(@user_id)}",
+        title: "To: ",
+        value: "<@#{target_user}>","#{user_address(@user_id)}",
         short: true
       }]
     }]

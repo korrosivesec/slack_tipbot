@@ -10,7 +10,7 @@ module Seckcoin
   DEPOSIT_POSTTEXT = 'this is your address'
   TIP_ERROR_TEXT = 'pls say tip @username amount'
   TIP_PRETEXT = ':tada:'
-  TIP_POSTTEXT1 = 'https://seckco.in/tx/'
+  TIP_POSTTEXT1 = 'https://seckco.in/'
   TIP_POSTTEXT2 = '|blockchain'
   TIP_POSTTEXT3 = '|Address'
   WITHDRAW_TEXT = 'Protecting your coin, good for you!'

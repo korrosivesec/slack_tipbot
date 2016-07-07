@@ -136,6 +136,23 @@ class Command
   def help
     
     @result[:text] = "#{@coin_config_module::HELP_TEXT} #{ACTIONS.join(', ' )}"
+    @result[:attachments] = [{
+      fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}:SKC:",
+      color: "good",
+      fields: [{
+        title: ":skc: How-To get Started:",
+        value: "http://coin.seckc.org",
+        short: false
+      },{
+        title: "Bot Commands:",
+        value: "balance: Usage 'tipskc balance' -- This will show your your current :skc: balance
+                \ndeposit: Usage 'tipskc deposit' -- This will return your :SKC: wallet address
+                \ntip: Usage 'tipskc tip @username amount' -- This will transfer the specified amount of :skc: to the other user. Also available 'tipskc tip @username random low high'
+                \nwithdraw: Usage 'tipskc withdraw SecKCoinAddress amount' -- This will transfer :SKC: from the bot wallet to whatever address you specify (ex a Desktop wallet)
+                \nnetworkinfo: Usage 'tipskc networkinfo' -- This will return information about the SecKCoin network
+                \nhelp: Usage 'tipskc help' -- this will return this text",
+        short: false
+    }]
   end
 
 end

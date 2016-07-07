@@ -8,7 +8,7 @@ class Command
     @coin_config_module = Kernel.const_get ENV['COIN'].capitalize
     text = slack_params['text']
     @params = text.split(/\s+/)
-    raise "WACK" unless @params.shift == slack_params['trigger_word']
+    raise "I do not understand that command. Try 'help'" unless @params.shift == slack_params['trigger_word']
     @user_name = slack_params['user_name']
     @user_id = slack_params['user_id']
     @action = @params.shift

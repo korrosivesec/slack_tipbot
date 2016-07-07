@@ -61,11 +61,11 @@ class Command
         short: false
       },{
         title: "From: ",
-        value: "<@#{@user_id}>#{user_address(@user_id)}",
+        value: "<@#{@user_id}> (Address: |#{user_address(@user_id)})",
         short: true
       },{
         title: "To: ",
-        value: "<@#{target_user}>#{user_address(@user_id)}",
+        value: "<@#{target_user}> (Address: |#{user_address(@user_id)})",
         short: true
       }]
     }]

@@ -12,6 +12,7 @@ module Seckcoin
   TIP_PRETEXT = 'So generous!'
   TIP_POSTTEXT1 = 'https://seckco.in/tx/'
   TIP_POSTTEXT2 = '|blockchain'
+  TIP_POSTTEXT3 = '|Address'
   WITHDRAW_TEXT = 'Protecting your coin, good for you!'
   WITHDRAW_ICON = ':shit:'
   NETWORKINFO_ICON = ':bar_chart:'

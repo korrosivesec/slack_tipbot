@@ -62,12 +62,14 @@ class Command
         value: "#{tx}",
         short: false
       },{
-        title: "From: ",
-        value: "<@#{@user_id}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}#{@coin_config_module::TIP_POSTTEXT3}>)\nBalance: #{userBalance}",
+        title: "From: <@#{@user_id}>",
+        mrkdwn: true,
+        value: "<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}|#{user_address(@user_id)}>\nBalance: #{userBalance}",
         short: true
       },{
-        title: "To: ",
-        value: "<@#{target_user}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)\nBalance: XXXXXXXXX",
+        title: "To: <@#{target_user}>",
+        mrkdwn: true,
+        value: "<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(@user_id)}>\nBalance: XXXXXXXXX",
         short: true
       }]
     }]

@@ -65,7 +65,7 @@ class Command
         short: true
       },{
         title: "To: ",
-        value: "<@#{target_user}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)",
+        value: "<@#{target_user}>: (<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}#{@coin_config_module::TIP_POSTTEXT3}>)",
         short: true
       }]
     }]

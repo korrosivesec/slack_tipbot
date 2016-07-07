@@ -46,7 +46,7 @@ class Command
   def tip
     user = @params.shift
     userBalance = client.getbalance(@user_id)
-    targetBalance = client.getbalance(target_user)
+    #targetBalance = client.getbalance(target_user)
     raise @coin_config_module::TIP_ERROR_TEXT unless user =~ /<@(U.+)>/
 
     target_user = $1

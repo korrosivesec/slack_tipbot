@@ -8,7 +8,7 @@ class Command
     @coin_config_module = Kernel.const_get ENV['COIN'].capitalize
     text = slack_params['text']
     @params = text.split(/\s+/)
-    raise "WACK" unless @params.shift == slack_params['trigger_word']
+    raise "I do not understand that command. Try 'help'" unless @params.shift == slack_params['trigger_word']
     @user_name = slack_params['user_name']
     @user_id = slack_params['user_id']
     @action = @params.shift
@@ -45,32 +45,34 @@ class Command
 
   def tip
     user = @params.shift
+    userBalance = client.getbalance(@user_id)
+    #targetBalance = client.getbalance(target_user)
     raise @coin_config_module::TIP_ERROR_TEXT unless user =~ /<@(U.+)>/
 
     target_user = $1
     set_amount
-
+    targetBalance = client.getbalance(target_user)
     tx = client.sendfrom @user_id, user_address(target_user), @amount
     @result[:text] = "#{@coin_config_module::TIP_PRETEXT} <@#{@user_id}> => <@#{target_user}> #{@amount}#{@coin_config_module::CURRENCY_ICON}"
     @result[:attachments] = [{
       fallback:"<@#{@user_id}> tipped <@#{target_user}> #{@amount}:SKC:",
       color: "good",
       fields: [{
-        title: ":skc: Transaction Details: ",
-        value: "<#{@coin_config_module::TIP_POSTTEXT1}#{tx}>",
+        title: ":skc: Transaction Hash:",
+        value: "#{tx}",
         short: false
       },{
-        title: "From Hacker: ",
-        value: "<@#{@user_id}>",
+        title: "From: ",
+        value: "<@#{@user_id}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(@user_id)}|#{user_address(@user_id)}>\nCurrent Balance: #{userBalance}",
         short: true
       },{
-        title: "To Hacker: ",
-        value: "<@#{target_user}>",
+        title: "To: ",
+        value: "<@#{target_user}>\n<#{@coin_config_module::ADDRESS_LOOKUP}#{user_address(target_user)}|#{user_address(target_user)}>\nCurrent Balance: #{targetBalance}",
         short: true
       }]
     }]
-    
-    @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
+    #
+    @result[:text] += " (View transaction on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
   end
 
   alias :":tipskc:" :tip
@@ -80,7 +82,7 @@ class Command
     set_amount
     tx = client.sendfrom @user_id, address, @amount
     @result[:text] = "#{@coin_config_module::WITHDRAW_TEXT} <@#{@user_id}> => #{address} #{@amount}#{@coin_config_module::CURRENCY_ICON} "
-    @result[:text] += " (<#{@coin_config_module::TIP_POSTTEXT1}#{tx}#{@coin_config_module::TIP_POSTTEXT2}>)"
+    @result[:text] += " \n(View transaction on <#{@coin_config_module::TIP_POSTTEXT1}#{tx}|https://seckco.in>)"
     @result[:icon_emoji] = @coin_config_module::WITHDRAW_ICON
   end
 
@@ -94,8 +96,18 @@ class Command
 
   def set_amount
     amount = @params.shift
-    randomize_amount if (amount == "random")
-    @amount = amount.to_i
+    if (amount == "random")
+        lower = @params.shift.to_i
+        upper = @params.shift.to_i
+        @amount = rand(lower..upper).to_i
+    else 
+        @amount = amount.to_i
+    end
+    #amount = @params.shift
+    #randomize_amount if (amount == "random")
+    #@amount = amount.to_i
+
+  
     
     raise @coin_config_module::TOO_POOR_TEXT unless available_balance >= @amount + 1
     raise @coin_config_module::NO_PURPOSE_LOWER_BOUND_TEXT if @amount < @coin_config_module::NO_PURPOSE_LOWER_BOUND
@@ -124,6 +136,39 @@ class Command
   def help
     
     @result[:text] = "#{@coin_config_module::HELP_TEXT} #{ACTIONS.join(', ' )}"
+    @result[:attachments] = [{
+      color: "good",
+      fields: [{
+        title: ":skc: How-To get Started:",
+        value: "http://coin.seckc.org",
+        short: false
+      },{
+        title: "Bot Commands:",
+      },{
+        title: "balance:",
+        value: "Usage 'tipskc balance' -- This will show your your current :skc: balance",
+        short: false
+      },{
+        title: "deposit:",
+        value: "Usage 'tipskc deposit' -- This will return your :SKC: wallet address",
+        short: false        
+      },{
+        title: "tip:",
+        value: "Usage 'tipskc tip @username amount' -- This will transfer the specified amount of :skc: to the other user. Also available 'tipskc tip @username random low high'",
+        short: false 
+      },{
+        title: "withdraw:",
+        value: "Usage 'tipskc withdraw SecKCoinAddress amount' -- This will transfer :SKC: from the bot wallet to whatever address you specify (ex a Desktop wallet)",
+        short: false  
+      },{
+        title: "networkinfo:",
+        value: "Usage 'tipskc networkinfo' -- This will return information about the SecKCoin network",
+        short: false 
+      },{
+        title: "help:",
+        value: "Usage 'tipskc help' -- this will return this text",
+      }]
+    }]
   end
 
 end
